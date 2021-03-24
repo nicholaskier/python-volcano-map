@@ -8,8 +8,7 @@ elev = list(data["ELEV"])
 name = list(data["NAME"])
 
 html = """
-Volacano name:<br>
-<a href="https://www.google.com/search?q=%%22%s%%22" target="_blank">%s</a><br>
+<h2><a href="https://www.google.com/search?q=%%22%s%%22" target="_blank">%s</a></h2>
 Height = %s m
 """
 
