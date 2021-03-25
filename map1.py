@@ -29,5 +29,8 @@ for lt, ln, el, name in zip(lat, lon, elev, name):
     iframe = folium.IFrame(html=html % (name, name, el), width=200, height=100)
     fg.add_child(folium.CircleMarker(location=[lt, ln], radius=9, popup=folium.Popup(iframe), fill_color=color_producer(el), color="white", fill_opacity=0.7))
 
+fg.add_child(folium.GeoJson(data=(open("world.json", 'r', encoding='utf-8-sig').read())))
+# add polygon layers from world.json file
+
 map.add_child(fg)
 map.save("Map1.html")
