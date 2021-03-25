@@ -27,7 +27,7 @@ fg = folium.FeatureGroup(name="My Map")
 for lt, ln, el, name in zip(lat, lon, elev, name):
     # zip function distributes items one by one from each list
     iframe = folium.IFrame(html=html % (name, name, el), width=200, height=100)
-    fg.add_child(folium.Marker(location=[lt, ln], popup=folium.Popup(iframe), icon=folium.Icon(color=color_producer(el))))
+    fg.add_child(folium.CircleMarker(location=[lt, ln], radius=9, popup=folium.Popup(iframe), fill_color=color_producer(el), color="white", fill_opacity=0.7))
 
 map.add_child(fg)
 map.save("Map1.html")
